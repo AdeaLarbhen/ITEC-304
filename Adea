@@ -1,0 +1,15 @@
+from flask import Flask
+from datetime import datetime
+app = Flask(__name__)
+@app.route('/')
+def hello():
+ return """
+ 
+ <html><body>
+ <h1>Larbhen Felix A. Adea</h1>
+ <h1>I'm 21 years old, from Paete, Laguna</h1><br>
+ The time is {0}.</body></html>""".format(
+ str(datetime.now()))
+
+# Launch the Flask dev server
+app.run(host="localhost", debug=True)
